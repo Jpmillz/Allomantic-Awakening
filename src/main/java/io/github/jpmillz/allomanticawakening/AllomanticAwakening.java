@@ -1,5 +1,11 @@
 package io.github.jpmillz.allomanticawakening;
 
+import io.github.jpmillz.allomanticawakening.events.ClientEvents;
+import io.github.jpmillz.allomanticawakening.events.PlayerEvents;
+import io.github.jpmillz.allomanticawakening.items.ItemInit;
+import io.github.jpmillz.allomanticawakening.items.datacomponents.ComponentRegister;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -22,6 +28,10 @@ public class AllomanticAwakening {
 
     public AllomanticAwakening(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
+        ItemInit.ITEMS.register(modEventBus);
+        ComponentRegister.MOD_COMPONENTS.register(modEventBus);
+
+        NeoForge.EVENT_BUS.register(new PlayerEvents());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
