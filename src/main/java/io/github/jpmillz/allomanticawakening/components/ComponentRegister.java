@@ -1,4 +1,4 @@
-package io.github.jpmillz.allomanticawakening.items.datacomponents;
+package io.github.jpmillz.allomanticawakening.components;
 
 import com.mojang.serialization.Codec;
 import io.github.jpmillz.allomanticawakening.AllomanticAwakening;

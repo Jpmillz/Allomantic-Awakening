@@ -15,5 +15,6 @@ public class LanguageDataProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         addItem(ItemInit.BRASS_INGOT, "Brass Ingot");
+        addItem(ItemInit.BRASS_SWORD, "Brass Sword");
     }
 }
